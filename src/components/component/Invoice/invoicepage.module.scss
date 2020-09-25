@@ -1,0 +1,12 @@
+$a4_width: 210mm;
+$a4_height: 297mm;
+$a4_bleed: 50px;
+
+.a4_page {
+  width: $a4_width;
+  height: $a4_height;
+  padding: $a4_bleed;
+  font-family: arial;
+
+  background-color: #fff; 
+}

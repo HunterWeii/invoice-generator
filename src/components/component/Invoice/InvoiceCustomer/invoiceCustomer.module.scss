@@ -1,0 +1,42 @@
+.invoice_customer {
+  font-family: arial;
+  display: flex;
+  margin-bottom: 20px;
+
+  &_cardLeft {
+    width: 60%;
+  }
+
+  &_cardRight {
+    width: 40%;
+  }
+
+  &_text {
+    display: block;
+    line-height: 1.5;
+    &_name { font-weight: bold; }
+  }
+
+  &_visible { visibility: hidden; }
+
+  &_textBlock {  
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+
+    &_title {
+      display: block;
+      width: 55px;
+    }
+
+    &_text {
+      margin-left: 10px;
+    }
+
+    &_textTitle {
+      font-size: 16px;
+      font-weight: bold;
+      margin-left: 15px;
+    }
+  }
+}

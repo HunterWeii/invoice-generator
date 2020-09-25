@@ -1,0 +1,11 @@
+@import "~styles/variables/font.scss";
+
+.input {
+  width: 100%;
+  font-size: 12px;
+  font-family: $primary-font;
+  padding: 10px;
+  border: 1px solid #424242;
+  border-radius: 3px;
+  &:focus { outline: none }
+}

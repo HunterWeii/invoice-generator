@@ -1,0 +1,9 @@
+@import "~styles/variables/font.scss";
+
+.text {
+  font-size: 12px;
+  font-family: $primary-font;
+  &_secondary { 
+    font-family: $secondary-font;
+  }
+}

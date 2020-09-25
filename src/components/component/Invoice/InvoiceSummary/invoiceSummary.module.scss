@@ -1,0 +1,50 @@
+.invoice_summary {
+
+  &_price {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 15px 0;
+    margin-bottom: 15px;
+  }
+
+  &_text {
+    font-size: 11px;
+  }
+
+  &_mention {
+    display: flex;
+    width: 300px;
+    padding-left: 15px;
+
+    &_text { font-size: 11px; }
+  }
+
+  &_total {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+
+    &_title {
+      display: inline-block;
+      width: 100px;
+      font-size: 11px;
+      text-align: right;
+    }
+
+    &_text {
+      display: inline-block;
+      margin-left: 10px;
+      width: 120px;
+      font-size: 11px;
+      text-align: center;
+      &_mention { font-weight: 600; }
+    }
+
+    &_box {
+      border: 1px solid #000;
+      padding: 2px;
+      font-weight: 600;
+    }
+
+  }
+}
