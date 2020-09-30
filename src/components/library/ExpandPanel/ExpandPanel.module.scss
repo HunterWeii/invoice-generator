@@ -1,0 +1,18 @@
+.expandpanel {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid red;
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &_button_container {
+    display: flex;
+    width: 110px;
+    justify-content: flex-end;
+  }
+}

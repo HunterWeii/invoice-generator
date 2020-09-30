@@ -4,11 +4,16 @@
   display: flex;
 
   &_form {
-    width: 35%;
-    padding: 25px;
+    width: 32%;
+    padding: 30px;
     height: 100%;
     overflow: hidden;
     background-color: white;
+    overflow-y: scroll;
+  }
+
+  &_invoice_container {
+    margin-top: 15px;
   }
 
   &_viewer {

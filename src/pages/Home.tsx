@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import CustomerForm from 'components/pages/Home/InvoiceForm/InvoiceCustomerForm';
+import InvoiceItemForm from 'components/pages/Home/InvoiceForm/InvoiceItemForm';
 import InvoiceViewer from 'components/pages/Home/InvoiceViewer/InvoiceViewer';
 import { useCustomerForm } from "stores/invoice-form/form-index";
 import { useInvoiceItems } from "stores/invoice-item-form/invoice-item-index";
 import "./home.scss";
+
 
 export default function Home() {
   const {
@@ -31,6 +33,15 @@ export default function Home() {
     invoicePageFormReducer({ type, payload });
   };
 
+  const handleDeleteInvoiceItem = (itemAt: number) => {
+    const payload = { itemAt };
+    const type = 'delete';
+
+    invoicePageFormReducer({ type, payload });
+  };
+
+  const handleAddInvoiceItem = () => invoicePageFormReducer({ type: 'add' });
+
   // componentDidMount
   useEffect(function componentDidMount() {
     let saveItems = localStorage.getItem('risetron-invoice') || "";
@@ -40,8 +51,6 @@ export default function Home() {
         type: 'load',
         payload: { customerForm }
       });
-
-      console.log('how many times you run');
     }
   }, [customerFormDispatch])
 
@@ -58,6 +67,13 @@ export default function Home() {
           form={ customerForm }
           handleForm={ handleCustomerForm }
         />
+        <div className="home_invoice_container">
+          <InvoiceItemForm
+            invoiceForm={ invoicePageForm }
+            handleAddInvoiceItem={ handleAddInvoiceItem }
+            handleInvoiceItem={ handleInvoiceItem }
+            handleDeleteInvoiceItem={ handleDeleteInvoiceItem } />
+        </div>
       </div>
       <div className="home_viewer"  >
         <InvoiceViewer 

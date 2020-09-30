@@ -1,4 +1,5 @@
 interface IInvoiceItem {
+  itemIndex: number | string,
   description: string
   qty: number,
   unitPrice: number,
@@ -7,6 +8,7 @@ interface IInvoiceItem {
 }
 
 export const generateInvoiceItem = (): IInvoiceItem => ({
+  itemIndex: 1,
   description: 'item 1 testing',
   qty: 1,
   unitPrice: 0.00,

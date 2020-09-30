@@ -42,14 +42,14 @@ export default function InvoiceCustomer(props: invoiceCustomerProps) {
       </div>
       <div className={ style.invoice_customer_cardRight }>
         <TitleText
-            containerclass={ style.invoice_customer_textBlock }
-            titleclass={ style.invoice_customer_textBlock_title }
-            textclass={ style.invoice_customer_textBlock_textTitle }
-            title="">INVOICE</TitleText>
-        <TitleText
           containerclass={ style.invoice_customer_textBlock }
           titleclass={ style.invoice_customer_textBlock_title }
-          textclass={ style.invoice_customer_textBlock_text }
+          textclass={ style.invoice_customer_textBlock_textTitle }
+          title="">INVOICE</TitleText>
+        <TitleText
+          containerclass={ style.invoice_customer_textBlock }
+          titleclass={ classNames(style.invoice_customer_textBlock_title, style.invoice_customer_textBlock_title_bold) }
+          textclass={  classNames(style.invoice_customer_textBlock_text, style.invoice_customer_textBlock_text_bold) }
           title="Invoice"
           center=":">
             { customerInvoice }

@@ -27,10 +27,13 @@
     &_title {
       display: block;
       width: 55px;
+
+      &_bold { font-weight: bold }
     }
 
     &_text {
       margin-left: 10px;
+      &_bold { font-weight: bold }
     }
 
     &_textTitle {

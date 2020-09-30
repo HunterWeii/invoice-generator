@@ -5,6 +5,11 @@ type InvoiceItemProps = {
   invoicePageItems: any
 }
 
+function formatPrice(num: number): string {
+  if(num === 0) return "";
+  return num.toFixed(2)
+}
+
 export default function InvoiceItem(props: InvoiceItemProps) {
   return (
     <div className={ style.invoice_item }>
@@ -22,14 +27,23 @@ export default function InvoiceItem(props: InvoiceItemProps) {
         <tbody>
           {
             props.invoicePageItems.map((item: any, index: number) => {
+              let {
+                itemIndex,
+                unitPrice,
+                discount,
+                amount,
+                qty,
+                description
+              } = item;
+
               return (
                 <tr key={index}>
-                  <td>{ index + 1 }</td>
-                  <td style={{ textAlign: 'left' }}>{ item.description }</td>
-                  <td>{ item.qty }</td>
-                  <td>{ item.unitPrice.toFixed(2) }</td>
-                  <td>{ item.discount.toFixed(2) }</td>
-                  <td>{ item.amount.toFixed(2) }</td>
+                  <td>{ itemIndex }</td>
+                  <td style={{ textAlign: 'left' }}>{ description }</td>
+                  <td>{ qty }</td>
+                  <td>{ formatPrice(unitPrice) }</td>
+                  <td>{ formatPrice(discount) }</td>
+                  <td>{ formatPrice(amount) }</td>
                 </tr>
               ) 
             })
