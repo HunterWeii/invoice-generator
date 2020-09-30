@@ -3,17 +3,25 @@ import classNames from 'classnames'
 import TextBase from 'components/library/TextBase/TextBase'
 import TitleText from 'components/library/TitleText/TitleText';
 import style from './invoiceSummary.module.scss'
+import numToWords from 'library/numToWords';
 
 type InvoiceSummaryProps = { invoicePageItems : any }
 
 export default function InvoiceSummary(props: InvoiceSummaryProps) {
-  let pageTotal = props.invoicePageItems.reduce((prevSum: number, item:any) => item.amount + prevSum, 0);
+  let pageTotal = props.invoicePageItems.reduce((prevSum: number, item:any) => {
+    const { qty, discount, unitPrice } = item;
+    const itemDiscount = parseFloat(discount) === 0 ? 1 : parseFloat(discount); 
+    const itemAmount = parseFloat(unitPrice) * parseFloat(qty) * itemDiscount;
+
+    return itemAmount + prevSum;
+  }, 0);
+  const pageTotalInWords = numToWords(pageTotal);
   pageTotal = pageTotal.toFixed(2);
 
   return (
     <div className={style.invoice_summary} >
       <div className={style.invoice_summary_price}>
-        <TextBase textclass={ style.invoice_summary_text }>RINGGIT MALAYSIA FOUR HUNDRED AND THIRTY NINE ONLY</TextBase>
+  <TextBase textclass={ style.invoice_summary_text }>RINGGIT MALAYSIA { pageTotalInWords }</TextBase>
         <div className={style.invoice_summary_total}>
           <div>
             <TitleText 

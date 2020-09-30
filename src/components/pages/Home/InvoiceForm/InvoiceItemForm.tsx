@@ -34,6 +34,7 @@ export default function InvoiceItemForm(props: invoiceItemProps) {
 
           return (
             <ExpandPanel
+              expandclass={style.invoiceForm_item}
               key={ uniqueKey } 
               title={ title }
               button={ DeleteButton }
@@ -42,6 +43,30 @@ export default function InvoiceItemForm(props: invoiceItemProps) {
                 title="Item Index"
                 name="itemIndex"
                 value={ item.itemIndex }
+                onChange={ handleInputChange }
+              />
+              <TitleInput 
+                title="Description"
+                name="description"
+                value={ item.description }
+                onChange={ handleInputChange }
+              />
+              <TitleInput 
+                title="Qty"
+                name="qty"
+                value={ item.qty }
+                onChange={ handleInputChange }
+              />
+              <TitleInput 
+                title="Unit Price"
+                name="unitPrice"
+                value={ item.unitPrice }
+                onChange={ handleInputChange }
+              />
+              <TitleInput 
+                title="Discount"
+                name="discount"
+                value={ item.discount }
                 onChange={ handleInputChange }
               />
             </ExpandPanel>

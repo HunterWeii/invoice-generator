@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 import CustomerForm from 'components/pages/Home/InvoiceForm/InvoiceCustomerForm';
 import InvoiceItemForm from 'components/pages/Home/InvoiceForm/InvoiceItemForm';
 import InvoiceViewer from 'components/pages/Home/InvoiceViewer/InvoiceViewer';
+import GeneratePDFButton from 'components/pages/Home/Button/GeneratePDFButton';
+import ResetButton from 'components/pages/Home/Button/ResetButton';
 import { useCustomerForm } from "stores/invoice-form/form-index";
 import { useInvoiceItems } from "stores/invoice-item-form/invoice-item-index";
 import "./home.scss";
-
 
 export default function Home() {
   const {
@@ -42,6 +43,11 @@ export default function Home() {
 
   const handleAddInvoiceItem = () => invoicePageFormReducer({ type: 'add' });
 
+  const handleReset = () => {
+    customerFormDispatch({ type: 'reset' });
+    invoicePageFormReducer({ type: 'reset' });
+  };
+
   // componentDidMount
   useEffect(function componentDidMount() {
     let saveItems = localStorage.getItem('risetron-invoice') || "";
@@ -62,6 +68,8 @@ export default function Home() {
 
   return (
     <section className="home">
+      <ResetButton handleReset={ handleReset } />
+      <GeneratePDFButton />
       <div className="home_form">
         <CustomerForm 
           form={ customerForm }

@@ -5,7 +5,9 @@ type InvoiceItemProps = {
   invoicePageItems: any
 }
 
-function formatPrice(num: number): string {
+function formatPrice(num: number | string): string {
+  num = parseFloat(num as string);
+
   if(num === 0) return "";
   return num.toFixed(2)
 }
@@ -31,19 +33,21 @@ export default function InvoiceItem(props: InvoiceItemProps) {
                 itemIndex,
                 unitPrice,
                 discount,
-                amount,
                 qty,
                 description
               } = item;
+              
+              const itemDiscount = parseFloat(discount) === 0 ? 1 : parseFloat(discount); 
+              const itemAmount = parseFloat(unitPrice) * parseFloat(qty) * itemDiscount;
 
               return (
                 <tr key={index}>
                   <td>{ itemIndex }</td>
                   <td style={{ textAlign: 'left' }}>{ description }</td>
                   <td>{ qty }</td>
-                  <td>{ formatPrice(unitPrice) }</td>
-                  <td>{ formatPrice(discount) }</td>
-                  <td>{ formatPrice(amount) }</td>
+                  <td>{ formatPrice(unitPrice || 0) }</td>
+                  <td>{ formatPrice(discount || 0) }</td>
+                  <td>{ formatPrice(itemAmount) }</td>
                 </tr>
               ) 
             })

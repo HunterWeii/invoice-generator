@@ -1,0 +1,24 @@
+$button: 40px;
+$from-top: 15px;
+
+.home_button {
+  width: $button;
+  height: $button;
+  position: fixed;
+  top: $from-top;
+  right: 30px;
+  background-color: #1565C0;
+  color: #fff;
+
+  &:hover {
+    background-color: #2196F3;
+  }
+
+  &_print {
+    top: $from-top + $button + 10px;
+    background-color: #00695C;
+    &:hover {
+      background-color: #00897B;
+    }
+  }
+}
