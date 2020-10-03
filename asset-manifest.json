@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.9c5e1320.chunk.css",
-    "main.js": "/static/js/main.44f1a7f2.chunk.js",
-    "main.js.map": "/static/js/main.44f1a7f2.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.483b194f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.483b194f.js.map",
-    "static/js/2.d02b9a7f.chunk.js": "/static/js/2.d02b9a7f.chunk.js",
-    "static/js/2.d02b9a7f.chunk.js.map": "/static/js/2.d02b9a7f.chunk.js.map",
-    "static/js/3.b5812334.chunk.js": "/static/js/3.b5812334.chunk.js",
-    "static/js/3.b5812334.chunk.js.map": "/static/js/3.b5812334.chunk.js.map",
-    "static/js/4.f7ae0d64.chunk.js": "/static/js/4.f7ae0d64.chunk.js",
-    "static/js/4.f7ae0d64.chunk.js.map": "/static/js/4.f7ae0d64.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.b8ab62609f9c1827ed49fe0f1fb351de.js": "/precache-manifest.b8ab62609f9c1827ed49fe0f1fb351de.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.9c5e1320.chunk.css.map": "/static/css/main.9c5e1320.chunk.css.map",
-    "static/js/3.b5812334.chunk.js.LICENSE.txt": "/static/js/3.b5812334.chunk.js.LICENSE.txt",
-    "static/js/4.f7ae0d64.chunk.js.LICENSE.txt": "/static/js/4.f7ae0d64.chunk.js.LICENSE.txt",
-    "static/media/risetron-logo.png": "/static/media/risetron-logo.f0b6e635.png"
+    "main.css": "/invoice-generator/static/css/main.9c5e1320.chunk.css",
+    "main.js": "/invoice-generator/static/js/main.24fdb85d.chunk.js",
+    "main.js.map": "/invoice-generator/static/js/main.24fdb85d.chunk.js.map",
+    "runtime-main.js": "/invoice-generator/static/js/runtime-main.b748b956.js",
+    "runtime-main.js.map": "/invoice-generator/static/js/runtime-main.b748b956.js.map",
+    "static/js/2.d02b9a7f.chunk.js": "/invoice-generator/static/js/2.d02b9a7f.chunk.js",
+    "static/js/2.d02b9a7f.chunk.js.map": "/invoice-generator/static/js/2.d02b9a7f.chunk.js.map",
+    "static/js/3.b5812334.chunk.js": "/invoice-generator/static/js/3.b5812334.chunk.js",
+    "static/js/3.b5812334.chunk.js.map": "/invoice-generator/static/js/3.b5812334.chunk.js.map",
+    "static/js/4.f7ae0d64.chunk.js": "/invoice-generator/static/js/4.f7ae0d64.chunk.js",
+    "static/js/4.f7ae0d64.chunk.js.map": "/invoice-generator/static/js/4.f7ae0d64.chunk.js.map",
+    "index.html": "/invoice-generator/index.html",
+    "precache-manifest.baa791d770c161e2ec26cc11b1626be8.js": "/invoice-generator/precache-manifest.baa791d770c161e2ec26cc11b1626be8.js",
+    "service-worker.js": "/invoice-generator/service-worker.js",
+    "static/css/main.9c5e1320.chunk.css.map": "/invoice-generator/static/css/main.9c5e1320.chunk.css.map",
+    "static/js/3.b5812334.chunk.js.LICENSE.txt": "/invoice-generator/static/js/3.b5812334.chunk.js.LICENSE.txt",
+    "static/js/4.f7ae0d64.chunk.js.LICENSE.txt": "/invoice-generator/static/js/4.f7ae0d64.chunk.js.LICENSE.txt",
+    "static/media/risetron-logo.png": "/invoice-generator/static/media/risetron-logo.f0b6e635.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.483b194f.js",
+    "static/js/runtime-main.b748b956.js",
     "static/js/3.b5812334.chunk.js",
     "static/css/main.9c5e1320.chunk.css",
-    "static/js/main.44f1a7f2.chunk.js"
+    "static/js/main.24fdb85d.chunk.js"
   ]
 }
