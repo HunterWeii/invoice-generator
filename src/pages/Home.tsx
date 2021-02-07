@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import InvoiceTypeForm from "components/pages/Home/InvoiceForm/InvoiceTypeForm";
 import CustomerForm from 'components/pages/Home/InvoiceForm/InvoiceCustomerForm';
 import InvoiceItemForm from 'components/pages/Home/InvoiceForm/InvoiceItemForm';
 import InvoiceViewer from 'components/pages/Home/InvoiceViewer/InvoiceViewer';
@@ -6,9 +7,16 @@ import GeneratePDFButton from 'components/pages/Home/Button/GeneratePDFButton';
 import ResetButton from 'components/pages/Home/Button/ResetButton';
 import { useCustomerForm } from "stores/invoice-form/form-index";
 import { useInvoiceItems } from "stores/invoice-item-form/invoice-item-index";
+import { useInvoiceTypeItems } from "stores/invoice-type-form/invoice-type-index";
 import "./home.scss";
 
 export default function Home() {
+  const {
+    invoiceTypeForm,
+    dispatchInvoiceType
+  } = useInvoiceTypeItems();
+  
+  
   const {
     customerForm,
     customerFormDispatch
@@ -71,10 +79,16 @@ export default function Home() {
       <ResetButton handleReset={ handleReset } />
       <GeneratePDFButton />
       <div className="home_form">
-        <CustomerForm 
-          form={ customerForm }
-          handleForm={ handleCustomerForm }
+        <InvoiceTypeForm 
+          form={ invoiceTypeForm }
+          handleForm={dispatchInvoiceType}
         />
+        <div className="home_invoice_container">
+          <CustomerForm 
+            form={ customerForm }
+            handleForm={ handleCustomerForm }
+          />
+        </div>
         <div className="home_invoice_container">
           <InvoiceItemForm
             invoiceForm={ invoicePageForm }
@@ -85,6 +99,7 @@ export default function Home() {
       </div>
       <div className="home_viewer"  >
         <InvoiceViewer 
+          invoiceType={ invoiceTypeForm.type }
           customerForm={ customerForm } 
           invoicePageItems={ invoicePageForm }
         />

@@ -10,7 +10,8 @@ import style from './invoicepage.module.scss';
 type invoicePageProps = {
   customerForm ?: object 
   customerItems ?: Array<any>,
-  invoicePageItems : any
+  invoicePageItems : any,
+  invoiceType: any
 }
 
 export default function InvoicePage(props: invoicePageProps) {
@@ -19,7 +20,7 @@ export default function InvoicePage(props: invoicePageProps) {
       <InvoiceHeader />
       <InvoiceCustomer customerForm={ props.customerForm } />
       <InvoiceItem invoicePageItems={ props.invoicePageItems } />
-      <InvoiceSummary invoicePageItems={ props.invoicePageItems } />
+      <InvoiceSummary invoicePageItems={ props.invoicePageItems } invoiceType={props.invoiceType}/>
       <InvoiceSignature />
     </section>
   )

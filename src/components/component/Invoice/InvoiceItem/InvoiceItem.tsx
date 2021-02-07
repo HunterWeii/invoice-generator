@@ -19,7 +19,7 @@ export default function InvoiceItem(props: InvoiceItemProps) {
         <thead>
           <tr>
             <th style={{ width: '50px'}}>Item</th>
-            <th style={{ width: '300px', textAlign: 'left' }} >Description</th>
+            <th style={{ width: '300px', textAlign: 'left' }}>Description</th>
             <th>QTY</th>
             <th>Unit Price (RM)</th>
             <th>Discount</th>
@@ -42,8 +42,8 @@ export default function InvoiceItem(props: InvoiceItemProps) {
 
               return (
                 <tr key={index}>
-                  <td>{ itemIndex }</td>
-                  <td style={{ textAlign: 'left' }}>{ description }</td>
+                  <td style={{ verticalAlign: "top"}}>{ itemIndex }</td>
+                  <td style={{ textAlign: 'left', width: "300px" }}>{ description }</td>
                   <td>{ qty }</td>
                   <td>{ formatPrice(unitPrice || 0) }</td>
                   <td>{ formatPrice(discount || 0) }</td>
