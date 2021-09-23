@@ -1,0 +1,38 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+
+  &-img {
+    width: 600px;
+    height: 450px;
+  }
+}
+
+.auth-input-container {
+  margin: 15px 0;
+
+  &_input {
+    width: 350px;
+    padding: 15px;
+  }
+
+  &_error {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #E63E6D;
+  }
+
+  &_button {
+    display: block;
+    width: 350px;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 4px;
+    background-color: #610094;
+    color: #fff;
+  }
+}

@@ -12,18 +12,33 @@ type InvoiceSummaryProps = { invoicePageItems : any, invoiceType: any }
 export default function InvoiceSummary(props: InvoiceSummaryProps) {
   let pageTotal = props.invoicePageItems.reduce((prevSum: number, item:any) => {
     const { qty, discount, unitPrice } = item;
+
     const itemDiscount = parseFloat(discount) === 0 ? 1 : parseFloat(discount); 
-    const itemAmount = parseFloat(unitPrice) * parseFloat(qty) * itemDiscount;
+    let itemAmount = parseFloat(unitPrice) * parseFloat(qty) * itemDiscount;
+
+    if(Number.isNaN(itemAmount)) {
+      itemAmount = 0;
+    }
 
     return itemAmount + prevSum;
   }, 0);
-  const pageTotalInWords = numToWords(pageTotal);
+
   pageTotal = pageTotal.toFixed(2);
+
+  let [ rm, sen ] = pageTotal.toString().split(".");
+  let pageTotalInWords = numToWords(rm);
+
+  if(sen !== "00") {
+    sen = numToWords(sen);
+    pageTotalInWords += ` \n AND ${sen} SEN `
+  }
+  
+  pageTotalInWords += "ONLY";
 
   return (
     <div className={style.invoice_summary} >
       <div className={style.invoice_summary_price}>
-  <TextBase textclass={ style.invoice_summary_text }>RINGGIT MALAYSIA { pageTotalInWords }</TextBase>
+        <TextBase textclass={ style.invoice_summary_text }>RINGGIT MALAYSIA { pageTotalInWords }</TextBase>
         <div className={style.invoice_summary_total}>
           <div>
             <TitleText 
