@@ -25,7 +25,7 @@ export default function Auth() {
 
   return (
     <div className="auth-container">
-      <img className="auth-container-img" src={Logo} alt="support image" />
+      <img className="auth-container-img" src={Logo} alt="support" />
       <div className="auth-input-container">
         <input 
           className="auth-input-container_input" 
